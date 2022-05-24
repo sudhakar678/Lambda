@@ -12,3 +12,8 @@ variable "runtime" {
   type = string 
   defaultv= "python 3.8"
 }
+
+variable "region" {
+  type = string 
+  defaultv= "us-east-1"
+}
