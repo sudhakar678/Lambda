@@ -6,9 +6,9 @@ output_path = "outputs/welcome.zip"
  
 resource "aws_lambda_function" "terraform_lambda_func" {
 filename                       = "outputs/welcome.zip"
-function_name                  = "welcome"
+function_name                  = var.function_name
 role                           = aws_iam_role.lambda_role.arn
-handler                        = "welcome.hello"
-runtime                        = "python3.8"
+handler                        = var.handler
+runtime                        = var.runtime
 depends_on                     = [aws_iam_role_policy_attachment.attach_iam_policy_to_iam_role]
 }
